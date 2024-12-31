@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <h1 className="text-center my-4">Rick & Morty <span className="text-success">API</span></h1>
-      
+      <Characters />
     </>
 
   )

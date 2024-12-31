@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
+import Cards from '../cards/Cards';
 
 const Characters = () => {
     const urlBase = "https://rickandmortyapi.com/api/character";
@@ -25,12 +26,10 @@ const Characters = () => {
             }
         }
         fetchCharacters();
-    }, [])
+    }, [query])
     return (
         <>
-            <ul>
-                {characters.map((character) => (<li key={character.id}>{character.name}</li>))}
-            </ul>
+            <Cards characters={characters} />
         </>
     )
 }

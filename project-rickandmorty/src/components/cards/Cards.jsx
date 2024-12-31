@@ -1,8 +1,21 @@
 import React from 'react'
 
-const Cards = () => {
+const Cards = ({ characters }) => {
+
+  if (!characters || characters.length === 0) {
+    return <div>Personagem inesistente</div>
+  }
   return (
-    <div>Cards</div>
+
+    <div>
+      <ul>
+        {characters.map((character) => (<li key={character.id}>{character.name}</li>))}
+      </ul>
+
+    </div>
+
+
+
   )
 }
 
