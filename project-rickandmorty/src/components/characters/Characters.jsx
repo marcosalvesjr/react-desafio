@@ -1,16 +1,19 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
+import { useState, useEffect } from 'react';
 
-export const useFetchResults = () => {
+const Characters = () => {
     const urlBase = "https://rickandmortyapi.com/api/character";
     const [pageNumber, setPagenumber] = useState("");
-    const query = `?page={}&status={}&gender={}&species`
+    const [status, setStatus] = useState("");
+    const [species, setSpecies] = useState("");
+    const query = `?page=${pageNumber}&status=${status}&species=${species}`;
     const [characters, setCharacters] = useState([]);
     const [error, setError] = useState(null);
 
     useEffect(() => {
         const fetchCharacters = async () => {
             try {
-                const res = await fetch(urlBase+query)
+                const res = await fetch(urlBase + query)
                 if (!res.ok) {
                     throw new Error(`Error: ${res.status} - ${res.statusText}`);
                 }
@@ -23,7 +26,13 @@ export const useFetchResults = () => {
         }
         fetchCharacters();
     }, [])
-
-    //console.log(characters);
-    return { characters }
+    return (
+        <>
+            <ul>
+                {characters.map((character) => (<li key={character.id}>{character.name}</li>))}
+            </ul>
+        </>
+    )
 }
+
+export default Characters
