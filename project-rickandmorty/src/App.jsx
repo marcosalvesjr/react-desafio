@@ -1,10 +1,12 @@
-import './App.css'
-
+import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap/dist/js/bootstrap"
+//import { useFetchResults } from "./hook/useFetchResults";
 function App() {
 
+  //const { characters: items } = useFetchResults();
   return (
     <>
-      <h1>Olá Rick e Morty!</h1>
+      <h1 className="text-center my-4">Rick & Morty <span className="text-success">API</span></h1>
     </>
   )
 }
