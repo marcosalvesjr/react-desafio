@@ -3,7 +3,7 @@ import styles from "./Cards.module.scss"
 
 const Cards = ({ characters, error }) => {
 
-  if (characters) {
+  if (characters && characters.length > 0) {
     return (<div className='container'>
       <div className='row'>
 
@@ -27,7 +27,6 @@ const Cards = ({ characters, error }) => {
                   <div className={`${styles.badge} badge text-bg-secondary position-absolute`}>{character.status}</div>)
               }
             })()}
-            {/*<div className={`${styles.badge} badge text-bg-danger position-absolute`}>{character.status}</div>*/}
           </div>))}
       </div>
 

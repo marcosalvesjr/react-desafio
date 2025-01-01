@@ -24,7 +24,8 @@ const Characters = () => {
                 setCharacters(json.results);
                 setError(null);
             } catch (err) {
-                setError('erro na api');
+                setCharacters([])
+                setError('Nenhum personagem encontrado');
             }
         }
         fetchCharacters();
