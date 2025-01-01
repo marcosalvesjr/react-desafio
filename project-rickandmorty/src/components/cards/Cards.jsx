@@ -1,14 +1,10 @@
 import React from 'react'
 import styles from "./Cards.module.scss"
 
-const Cards = ({ characters }) => {
+const Cards = ({ characters, error }) => {
 
-  if (!characters || characters.length === 0) {
-    return <div>Personagem inesistente</div>
-  }
-  return (
-
-    <div className='container'>
+  if (characters) {
+    return (<div className='container'>
       <div className='row'>
 
         {characters.map((character) => (
@@ -37,10 +33,18 @@ const Cards = ({ characters }) => {
 
 
     </div>
+    )
+  } else
+    return (
+      <div>
+        <p>{error}</p>
+      </div>
+    )
 
 
 
-  )
+
+
 }
 
 export default Cards

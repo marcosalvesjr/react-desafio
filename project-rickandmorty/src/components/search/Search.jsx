@@ -1,8 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
+import styles from "./Search.module.scss"
 
-const Search = () => {
+const Search = ({setSearch}) => {
+  
+
+  const handleChange = (e) => {
+    setSearch(e.target.value)
+  }
   return (
-    <div>Search</div>
+    <form className='d-flex justify-content-center pb-4'>
+      <label>
+        <input onChange={handleChange} placeholder="Digite o nome do personagem" type="text" className={styles.input} />
+      </label>
+    </form>
   )
 }
 
