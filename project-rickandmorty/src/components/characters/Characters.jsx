@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import Cards from '../cards/Cards';
 import Search from '../search/Search';
 import Pagination from '../pagination/Pagination';
+import FilterOptions from '../filterOptions/FilterOptions';
+
 
 
 const Characters = () => {
@@ -34,13 +36,13 @@ const Characters = () => {
             }
         }
         fetchCharacters();
-    }, [query])    
+    }, [query])
     return (
         <>
             <Search setSearch={setSearch} />
-            
+            <FilterOptions setStatus={setStatus} />
             <Cards characters={characters} error={error} />
-            <Pagination setPageNumber={setPageNumber} info={info}/>
+            <Pagination setPageNumber={setPageNumber} info={info} />
         </>
     )
 }

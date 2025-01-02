@@ -12,6 +12,7 @@ const Pagination = ({ info, setPageNumber }) => {
       pageClassName='page-item'
       pageLinkClassName='page-link'
       onPageChange={(data) => { setPageNumber(data.selected + 1) }}
+      activeClassName='active'
     />
   )
 }
