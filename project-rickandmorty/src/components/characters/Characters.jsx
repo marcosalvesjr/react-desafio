@@ -13,8 +13,9 @@ const Characters = () => {
     const [status, setStatus] = useState("");
     const [species, setSpecies] = useState("");
     const [search, setSearch] = useState("");
+    const [gender, setGender] = useState("");
 
-    const query = `?page=${pageNumber}&name=${search}&status=${status}&species=${species}`;
+    const query = `?page=${pageNumber}&name=${search}&status=${status}&species=${species}&gender=${gender}`;
     const [characters, setCharacters] = useState([]);
     const [info, setInfo] = useState([]);
     const [error, setError] = useState(null);
@@ -40,7 +41,7 @@ const Characters = () => {
     return (
         <>
             <Search setSearch={setSearch} />
-            <FilterOptions setStatus={setStatus} />
+            <FilterOptions setStatus={setStatus} setSpecies={setSpecies} setGender={setGender} />
             <Cards characters={characters} error={error} />
             <Pagination setPageNumber={setPageNumber} info={info} />
         </>
