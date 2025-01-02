@@ -40,7 +40,7 @@ const Characters = () => {
     }, [query])
     return (
         <>
-            <Search setSearch={setSearch} />
+            <Search search={search} setSearch={setSearch} />
             <FilterOptions setSearch={setSearch} setStatus={setStatus} setSpecies={setSpecies} setGender={setGender} />
             <Cards characters={characters} error={error} />
             <Pagination setPageNumber={setPageNumber} info={info} />

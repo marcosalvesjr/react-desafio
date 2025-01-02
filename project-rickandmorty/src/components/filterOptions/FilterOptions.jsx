@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styles from './FilterOptions.module.scss'
-const FilterOptions = ({ setStatus, setSpecies, setGender }) => {
+const FilterOptions = ({ setStatus, setSpecies, setGender, setSearch }) => {
     const handleClick = () => {
         setStatus('');
         setSpecies('');
