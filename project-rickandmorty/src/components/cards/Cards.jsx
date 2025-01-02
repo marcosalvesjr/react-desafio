@@ -10,7 +10,7 @@ const Cards = ({ characters, error }) => {
         {characters.map((character) => (
           <div className='col-4 position-relative mb-3' key={character.id}>
             <div className={styles.cards}>
-              <img className={`${styles.img} img-fluid`} src={character.image} alt="Imagem dos personagens" />
+              <img className={`${styles.img} img-fluid w-100 h-100`} src={character.image} alt="Imagem dos personagens" />
               <div className='content' style={{ padding: "10px" }}>
                 <div className='fs-4 fw-bold mb-4'>{character.name}</div>
                 <div className='fs-6'>Última localização</div>
