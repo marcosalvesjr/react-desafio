@@ -19,12 +19,12 @@ const Cards = ({ characters, error }) => {
             </div>
             {(() => {
               if (character.status === "Dead") {
-                return (<div className={`${styles.badge} badge text-bg-danger position-absolute`}>{character.status}</div>)
+                return (<div className={`${styles.badge} badge text-bg-danger position-absolute`}>Morto</div>)
               } else if (character.status === "Alive") {
-                return (<div className={`${styles.badge} badge text-bg-success position-absolute`}>{character.status}</div>)
+                return (<div className={`${styles.badge} badge text-bg-success position-absolute`}>Vivo</div>)
               } else {
                 return (
-                  <div className={`${styles.badge} badge text-bg-secondary position-absolute`}>{character.status}</div>)
+                  <div className={`${styles.badge} badge text-bg-secondary position-absolute`}>Desconhecido</div>)
               }
             })()}
           </div>))}
@@ -35,8 +35,9 @@ const Cards = ({ characters, error }) => {
     )
   } else
     return (
-      <div>
-        <p>{error}</p>
+      <div className='alert alert-danger d-flex flex-column justify-content-center align-items-center pb-2'>
+        <p className='fw-bolder'>{error}</p>
+        <p>Clique em limpar filtro</p>
       </div>
     )
 
