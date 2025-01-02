@@ -16,6 +16,7 @@ const Cards = ({ characters, error }) => {
                 <div className='fs-6'>Última localização</div>
                 <div className='fs-5'>{character.location.name}</div>
               </div>
+              <button className='w-100 btn btn-success rounded-top-0 btn-lg'>Saiba mais</button>
             </div>
             {(() => {
               if (character.status === "Dead") {
