@@ -1,0 +1,19 @@
+.opt {
+  padding: 10px;
+  border: 2px solid #198754;
+  border-radius: 8px;
+  font-size: 16px;
+  box-shadow: 1px 3px 9px rgba(0, 0, 0, 0.479);
+  max-width: 500px;
+}
+
+.btn {
+  text-decoration: underline;
+  color: #146e44;
+  cursor: pointer;
+  font-weight: bolder;
+}
+
+.btn:hover {
+  color: #198754;
+}
