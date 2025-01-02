@@ -11,7 +11,7 @@ const Pagination = ({ info, setPageNumber }) => {
       previousClassName='btn btn-outline-success'
       pageClassName='page-item'
       pageLinkClassName='page-link'
-      onPageChange={(data) => { setPageNumber(data.selected) }}
+      onPageChange={(data) => { setPageNumber(data.selected + 1) }}
     />
   )
 }

@@ -4,6 +4,7 @@ import Cards from '../cards/Cards';
 import Search from '../search/Search';
 import Pagination from '../pagination/Pagination';
 
+
 const Characters = () => {
     const urlBase = "https://rickandmortyapi.com/api/character";
     const [pageNumber, setPageNumber] = useState(1);
@@ -37,6 +38,7 @@ const Characters = () => {
     return (
         <>
             <Search setSearch={setSearch} />
+            
             <Cards characters={characters} error={error} />
             <Pagination setPageNumber={setPageNumber} info={info}/>
         </>
