@@ -5,6 +5,7 @@ const FilterOptions = ({ setStatus, setSpecies, setGender }) => {
         setStatus('');
         setSpecies('');
         setGender('');
+        setSearch('');
     }
     return (
         <>

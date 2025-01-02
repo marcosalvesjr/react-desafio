@@ -41,7 +41,7 @@ const Characters = () => {
     return (
         <>
             <Search setSearch={setSearch} />
-            <FilterOptions setStatus={setStatus} setSpecies={setSpecies} setGender={setGender} />
+            <FilterOptions setSearch={setSearch} setStatus={setStatus} setSpecies={setSpecies} setGender={setGender} />
             <Cards characters={characters} error={error} />
             <Pagination setPageNumber={setPageNumber} info={info} />
         </>
