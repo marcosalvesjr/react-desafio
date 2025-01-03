@@ -19,6 +19,7 @@ const Characters = () => {
     const [characters, setCharacters] = useState([]);
     const [info, setInfo] = useState([]);
     const [error, setError] = useState(null);
+    
 
     useEffect(() => {
         const fetchCharacters = async () => {

@@ -1,7 +1,11 @@
 import React from 'react'
 import styles from "./Cards.module.scss"
+import { useState } from 'react';
+import Modal from '../modal/Modal';
 
 const Cards = ({ characters, error }) => {
+  const [open, setOpen] = useState(false);
+  const [selectedCharacter, setSelectedCharacter] = useState(null);
 
   if (characters && characters.length > 0) {
     return (<div className='container'>
@@ -16,8 +20,10 @@ const Cards = ({ characters, error }) => {
                 <div className='fs-6'>Última localização</div>
                 <div className='fs-5'>{character.location.name}</div>
               </div>
-              <button className='w-100 btn btn-success rounded-top-0 btn-lg'>Saiba mais</button>
+              <button onClick={()=>{setOpen(!open); setSelectedCharacter(character)}} className='w-100 btn btn-success rounded-top-0 btn-lg'>Saiba mais</button>
+
             </div>
+
             {(() => {
               if (character.status === "Dead") {
                 return (<div className={`${styles.badge} badge text-bg-danger position-absolute`}>Morto</div>)
@@ -25,15 +31,18 @@ const Cards = ({ characters, error }) => {
                 return (<div className={`${styles.badge} badge text-bg-success position-absolute`}>Vivo</div>)
               } else {
                 return (
-                  <div className={`${styles.badge} badge text-bg-secondary position-absolute`}>Desconhecido</div>)
+                  <div className={`${styles.badge} badge text-bg-secondary position-absolute`}>Desconhecido</div>
+
+                )
               }
             })()}
           </div>))}
       </div>
-
-
+      <Modal selectedCharacter={selectedCharacter} open={open} />
     </div>
+
     )
+
   } else
     return (
       <div className='alert alert-danger d-flex flex-column justify-content-center align-items-center pb-2'>
