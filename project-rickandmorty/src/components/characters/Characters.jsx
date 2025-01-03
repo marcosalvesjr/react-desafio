@@ -37,7 +37,7 @@ const Characters = () => {
             }
         }
         fetchCharacters();
-    }, [query])
+    }, [pageNumber, search, status, species, gender])
     return (
         <>
             <Search search={search} setSearch={setSearch} />
