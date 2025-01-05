@@ -4,12 +4,12 @@ import styles from './Modal.module.scss'
 const Modal = ({ selectedCharacter, open, setOpen }) => {
   if (open) {
     return (
-      <div className={styles.background}>
+      <div onClick={() => setOpen(!open)} className={styles.background}>
         <div className={`${styles.modal}`}>
 
           <img className='img-fluid w-100 h-100 rounded-top-2' src={selectedCharacter.image} alt="Imagem do personagem" />
           <div className='content ps-4'>
-            <h2 className='pt-4 pb-4 fw-bolder'>{selectedCharacter.name}</h2>
+            <h2 className='pt-4 pb-2 fw-bolder'>{selectedCharacter.name}</h2>
             <p><strong>Status:</strong>  {selectedCharacter?.status === 'Alive'
               ? 'Vivo'
               : selectedCharacter?.status === 'Dead'
