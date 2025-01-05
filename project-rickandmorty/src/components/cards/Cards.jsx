@@ -12,11 +12,11 @@ const Cards = ({ characters, error, charactersToShow }) => {
 
   if (characters && characters.length > 0) {
     return (
-      <div className='container'>
+      <div className={`${styles.container}`}>
         <div className='row'>
 
           {characters.slice(0, charactersToShow).map((character) => (
-            <div className='col-4 position-relative mb-3' key={character.id}>
+            <div className='col-lg-4 col-md-6 position-relative mb-3' key={character.id}>
               <div className={styles.cards}>
                 <a href={`https://rickandmortyapi.com/api/character/avatar/${character.id}.jpeg`} target='_blank'>
                   <img className={`${styles.img} img-fluid w-100 h-100`} src={character.image} alt="Imagem dos personagens" />

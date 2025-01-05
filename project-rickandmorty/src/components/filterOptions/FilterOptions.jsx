@@ -11,7 +11,7 @@ const FilterOptions = ({ setStatus, setSpecies, setGender, setSearch, setCharact
     }
     return (
         <>
-            <form className='d-flex justify-content-center gap-4 mb-4'>
+            <form className={`${styles.form} d-flex justify-content-center gap-4 mb-4`}>
                 <select className={styles.opt} onChange={(e) => setStatus(e.target.value)}>
                     <option value="" disabled selected>Selecione o status</option>
                     <option value="alive">Vivo</option>

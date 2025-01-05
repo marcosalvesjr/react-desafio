@@ -17,3 +17,18 @@
 .button{
   border-radius: 0px 0px 10px 10px;
 }
+
+.container {
+  .row {
+    display: flex;
+    flex-wrap: wrap; // Permite que os cards se reorganizem em várias linhas.
+    justify-content: center; // Centraliza os cards horizontalmente.
+
+    .col-4 {
+      @media (max-width: 768px) { // Para telas menores que 768px (tablets e menores)
+        flex: 0 0 100%; // Ocupa 100% da largura do container.
+        max-width: 100%;
+      }
+    }
+  }
+}
