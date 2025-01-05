@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import styles from './FilterOptions.module.scss'
-const FilterOptions = ({ setStatus, setSpecies, setGender, setSearch }) => {
+const FilterOptions = ({ setStatus, setSpecies, setGender, setSearch, setCharactersToShow }) => {
+
     const handleClick = () => {
         setStatus('');
         setSpecies('');
         setGender('');
         setSearch('');
+        setCharactersToShow();
     }
     return (
         <>
@@ -39,6 +41,14 @@ const FilterOptions = ({ setStatus, setSpecies, setGender, setSearch }) => {
                     <option value="unknown">Desconhecido</option>
                     <option value="">Todos</option>
                 </select>
+                <select className={styles.opt} onChange={(e) => setCharactersToShow(e.target.value)}>
+                    <option value="" disabled selected>Deseja ver quantos personagens</option>
+                    <option value="5">Mostrar: 5 personagens</option>
+                    <option value="10">Mostrar: 10 personagens</option>
+                    <option value="20">Mostrar: 20 personagens</option>
+
+                </select>
+
 
             </form>
             <p className={`d-flex justify-content-center gap-4 mb-4 ${styles.btn}`} onClick={handleClick}>Limpar filtro</p>
