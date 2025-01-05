@@ -38,7 +38,7 @@ const Cards = ({ characters, error }) => {
             })()}
           </div>))}
       </div>
-      <Modal selectedCharacter={selectedCharacter} open={open} />
+      <Modal selectedCharacter={selectedCharacter} open={open} setOpen={setOpen}/>
     </div>
 
     )
