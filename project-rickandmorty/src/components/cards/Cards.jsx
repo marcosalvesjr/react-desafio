@@ -7,8 +7,8 @@ import { use } from 'react';
 const Cards = ({ characters, error, charactersToShow }) => {
   const [open, setOpen] = useState(false);
   const [selectedCharacter, setSelectedCharacter] = useState(null);
- 
- 
+
+
 
   if (characters && characters.length > 0) {
     return (
@@ -18,7 +18,9 @@ const Cards = ({ characters, error, charactersToShow }) => {
           {characters.slice(0, charactersToShow).map((character) => (
             <div className='col-4 position-relative mb-3' key={character.id}>
               <div className={styles.cards}>
-                <img className={`${styles.img} img-fluid w-100 h-100`} src={character.image} alt="Imagem dos personagens" />
+                <a href={`https://rickandmortyapi.com/api/character/avatar/${character.id}.jpeg`} target='_blank'>
+                  <img className={`${styles.img} img-fluid w-100 h-100`} src={character.image} alt="Imagem dos personagens" />
+                </a>
                 <div className='content' style={{ padding: "10px" }}>
                   <div className='fs-4 fw-bold mb-4'>{character.name}</div>
                   <div className='fs-6'>Última localização</div>
