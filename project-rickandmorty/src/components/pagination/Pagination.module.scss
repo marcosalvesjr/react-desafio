@@ -1,10 +1,6 @@
-.bt{
-    color:black;
-    background-color: white;
-    border: solid green;
-}
-
-.bt:hover{
-    color: white;
-    background-color: green;
+@media (max-width: 768px) {
+  .next,
+  .prev {
+    display: none;
+  }
 }

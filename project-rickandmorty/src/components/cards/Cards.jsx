@@ -12,7 +12,7 @@ const Cards = ({ characters, error, charactersToShow }) => {
 
   if (characters && characters.length > 0) {
     return (
-      <div className={`${styles.container}`}>
+      <div className={`container ${styles.container}`}>
         <div className='row'>
 
           {characters.slice(0, charactersToShow).map((character) => (

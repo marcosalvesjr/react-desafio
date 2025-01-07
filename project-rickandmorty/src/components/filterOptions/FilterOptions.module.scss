@@ -27,5 +27,8 @@
   @media (max-width: 768px) { // Para telas menores que 768px
     flex-direction: column; // Os elementos serão empilhados verticalmente.
     align-items: center; // Centraliza os itens no eixo vertical.
+    .opt{
+      width: 300px;
+    }
   }
 }

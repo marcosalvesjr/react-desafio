@@ -13,8 +13,12 @@
   justify-content: center; // Centraliza o campo de busca horizontalmente.
   padding-bottom: 20px; // Espaçamento na parte inferior.
 
-  @media (max-width: 768px) { // Para telas menores que 768px
+  @media (max-width: 768px) {
+    // Para telas menores que 768px
     flex-direction: column; // Empilha o conteúdo verticalmente.
     align-items: center; // Centraliza no eixo vertical.
+    .input {
+      width: 300px;
+      }
   }
 }
