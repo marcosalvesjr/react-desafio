@@ -20,7 +20,7 @@ const Characters = () => {
     const [characters, setCharacters] = useState([]);
     const [info, setInfo] = useState([]);
     const [error, setError] = useState(null);
-    
+
 
     useEffect(() => {
         const fetchCharacters = async () => {
@@ -42,8 +42,8 @@ const Characters = () => {
     }, [pageNumber, search, status, species, gender])
     return (
         <>
-            <Search search={search} setSearch={setSearch} />
-            <FilterOptions setCharactersToShow={setCharactersToShow} setSearch={setSearch} setStatus={setStatus} setSpecies={setSpecies} setGender={setGender} />
+            <Search setPageNumber={setPageNumber} search={search} setSearch={setSearch} />
+            <FilterOptions setPageNumber={setPageNumber} setCharactersToShow={setCharactersToShow} setSearch={setSearch} setStatus={setStatus} setSpecies={setSpecies} setGender={setGender} />
             <Cards charactersToShow={charactersToShow} characters={characters} error={error} />
             <Pagination setPageNumber={setPageNumber} info={info} />
         </>

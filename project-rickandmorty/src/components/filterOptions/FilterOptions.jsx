@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styles from './FilterOptions.module.scss'
-const FilterOptions = ({ setStatus, setSpecies, setGender, setSearch, setCharactersToShow }) => {
+const FilterOptions = ({ setPageNumber, setStatus, setSpecies, setGender, setSearch, setCharactersToShow }) => {
 
     const handleClick = () => {
         setStatus('');
@@ -8,6 +8,7 @@ const FilterOptions = ({ setStatus, setSpecies, setGender, setSearch, setCharact
         setGender('');
         setSearch('');
         setCharactersToShow();
+        setPageNumber(1);
     }
     return (
         <>
