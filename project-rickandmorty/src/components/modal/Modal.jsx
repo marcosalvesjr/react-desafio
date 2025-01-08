@@ -38,7 +38,7 @@ const Modal = ({ selectedCharacter, open, setOpen }) => {
             <p><strong>Última localização:</strong> {selectedCharacter.location.name}</p></div>
 
 
-          <button className='w-100 btn btn-success rounded-top-0 btn-lg' onClick={() => setOpen(!open)}>Fechar</button>
+          <button className='w-100 btn btn-primary rounded-top-0 btn-lg' onClick={() => setOpen(!open)}>Fechar</button>
         </div>
       </div>
     )

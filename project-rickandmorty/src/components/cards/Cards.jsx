@@ -26,7 +26,7 @@ const Cards = ({ characters, error, charactersToShow }) => {
                   <div className='fs-6'>Última localização</div>
                   <div className='fs-5'>{character.location.name}</div>
                 </div>
-                <button onClick={() => { setOpen(!open); setSelectedCharacter(character) }} className='w-100 btn btn-success rounded-top-0 btn-lg'>Saiba mais</button>
+                <button onClick={() => { setOpen(!open); setSelectedCharacter(character) }} className='w-100 btn btn-primary rounded-top-0 btn-lg'>Saiba mais</button>
 
               </div>
 

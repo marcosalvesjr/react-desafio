@@ -13,15 +13,15 @@ const FilterOptions = ({ setPageNumber, setStatus, setSpecies, setGender, setSea
     return (
         <>
             <form className={`${styles.form} d-flex justify-content-center gap-4 mb-4`}>
-                <select className={styles.opt} onChange={(e) => setStatus(e.target.value)}>
-                    <option value="" disabled selected>Selecione o status</option>
+                <select className={styles.opt} onChange={(e) => { setStatus(e.target.value); setPageNumber(1); }}>
+                    <option defaultValue="placeholder" disabled selected>Selecione o status</option>
                     <option value="alive">Vivo</option>
                     <option value="dead">Morto</option>
                     <option value="unknown">Desconhecido</option>
                     <option value="">Todos</option>
                 </select>
-                <select className={styles.opt} onChange={(e) => setSpecies(e.target.value)}>
-                    <option value="" disabled selected>Selecione a espécie</option>
+                <select className={styles.opt} onChange={(e) => { setSpecies(e.target.value); setPageNumber(1); }}>
+                    <option defaultValue="placeholder" disabled selected>Selecione a espécie</option>
                     <option value="Human">Humano</option>
                     <option value="Alien">Alienígena </option>
                     <option value="Humanoid">Humanoide</option>
@@ -35,15 +35,15 @@ const FilterOptions = ({ setPageNumber, setStatus, setSpecies, setGender, setSea
                     <option value="Planet">Planeta</option>
                     <option value="">Todos</option>
                 </select>
-                <select className={styles.opt} onChange={(e) => setGender(e.target.value)}>
-                    <option value="" disabled selected>Selecione o genero</option>
+                <select className={styles.opt} onChange={(e) => { setGender(e.target.value); setPageNumber(1); }}>
+                    <option defaultValue="placeholder" disabled selected>Selecione o genero</option>
                     <option value="male">Macho</option>
                     <option value="female">Fêmea</option>
                     <option value="unknown">Desconhecido</option>
                     <option value="">Todos</option>
                 </select>
                 <select className={styles.opt} onChange={(e) => setCharactersToShow(e.target.value)}>
-                    <option value="" disabled selected>Deseja ver quantos personagens</option>
+                    <option defaultValue="" disabled selected>Deseja ver quantos personagens</option>
                     <option value="5">Mostrar: 5 personagens</option>
                     <option value="10">Mostrar: 10 personagens</option>
                     <option value="20">Mostrar: 20 personagens</option>
