@@ -14,27 +14,27 @@ Este projeto apresenta uma lista dos personagens da série Rick and Morty, permi
 
 *React-Paginate _v8.2.0_*: Componente React para implementar paginação facilmente.
 
-#Instruções para Clonar e Executar o Projeto
+# Instruções para Clonar e Executar o Projeto
 
-##1. Clone o repositorio
+## 1. Clone o repositorio
 
 ``` bash
 git clone https://github.com/marcosalvesjr/react-desafio.git
 ```
 
-##2.Acesso o diretório do projeto
+## 2.Acesso o diretório do projeto
 ``` bash
 cd project-rickandmorty
 ```
-##3.Instale as dependências
+## 3.Instale as dependências
 ``` bash
 npm install
 ```
 
-##4. Inicie o servidor de desenvolvimento
+## 4. Inicie o servidor de desenvolvimento
 ``` bash
 npm run dev
 ```
-#Link do projeto
+# Link do projeto
 https://project-rickandmorty-indol.vercel.app/
 
