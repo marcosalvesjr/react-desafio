@@ -20,10 +20,12 @@ const Characters = () => {
     const [characters, setCharacters] = useState([]);
     const [info, setInfo] = useState([]);
     const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(null);
 
 
     useEffect(() => {
         const fetchCharacters = async () => {
+            setLoading(true);
             try {
                 const res = await fetch(urlBase + query)
                 if (!res.ok) {
@@ -37,6 +39,7 @@ const Characters = () => {
                 setCharacters([])
                 setError('Nenhum personagem encontrado');
             }
+            setLoading(false);
         }
         fetchCharacters();
     }, [pageNumber, search, status, species, gender])
@@ -44,7 +47,9 @@ const Characters = () => {
         <>
             <Search setPageNumber={setPageNumber} search={search} setSearch={setSearch} />
             <FilterOptions setPageNumber={setPageNumber} setCharactersToShow={setCharactersToShow} setSearch={setSearch} setStatus={setStatus} setSpecies={setSpecies} setGender={setGender} />
-            <Cards charactersToShow={charactersToShow} characters={characters} error={error} />
+            {loading && <p className='text-primary text-center fw-bolder'>Carregando dados...</p>}
+            {!loading && <Cards charactersToShow={charactersToShow} characters={characters} error={error} />}
+
             <Pagination setPageNumber={setPageNumber} info={info} />
         </>
     )
