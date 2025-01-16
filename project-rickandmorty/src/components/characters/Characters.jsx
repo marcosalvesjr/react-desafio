@@ -1,4 +1,3 @@
-import React from 'react'
 import { useState, useEffect } from 'react';
 import Cards from '../cards/Cards';
 import Search from '../search/Search';

@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import styles from './FilterOptions.module.scss'
 const FilterOptions = ({ setPageNumber, setStatus, setSpecies, setGender, setSearch, setCharactersToShow }) => {
 

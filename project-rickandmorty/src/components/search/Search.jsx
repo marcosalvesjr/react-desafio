@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import styles from "./Search.module.scss"
 
 const Search = ({ setPageNumber, setSearch, search }) => {

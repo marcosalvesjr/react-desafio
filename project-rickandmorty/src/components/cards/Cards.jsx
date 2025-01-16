@@ -1,8 +1,7 @@
-import React from 'react'
 import styles from "./Cards.module.scss"
 import { useState } from 'react';
 import Modal from '../modal/Modal';
-import { use } from 'react';
+
 
 const Cards = ({ characters, error, charactersToShow }) => {
   const [open, setOpen] = useState(false);
