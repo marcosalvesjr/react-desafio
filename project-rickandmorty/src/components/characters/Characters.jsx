@@ -34,6 +34,7 @@ const Characters = () => {
         setSpecies(searchParams.get('species') || '');
         setSearch(searchParams.get('name') || '');
         setGender(searchParams.get('gender') || '');
+        setCharactersToShow(Number(searchParams.get('characterstoshow')) || 20);
     }, [searchParams]);
 
     useEffect(() => {
@@ -45,7 +46,7 @@ const Characters = () => {
             gender: `${gender}`,
             characterstoshow: `${charactersToShow}`
         })
-    }, [pageNumber, search, status, species, gender])
+    }, [pageNumber, search, status, species, gender, charactersToShow])
 
 
     useEffect(() => {
