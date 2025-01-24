@@ -72,11 +72,11 @@ const Characters = () => {
     return (
         <>
             <Search setPageNumber={setPageNumber} search={search} setSearch={setSearch} />
-            <FilterOptions setPageNumber={setPageNumber} setCharactersToShow={setCharactersToShow} setSearch={setSearch} setStatus={setStatus} setSpecies={setSpecies} setGender={setGender} />
+            <FilterOptions setSearchParams={setSearchParams} setPageNumber={setPageNumber} setCharactersToShow={setCharactersToShow} setSearch={setSearch} setStatus={setStatus} setSpecies={setSpecies} setGender={setGender} />
             {loading && <p className='text-primary text-center fw-bolder'>Carregando dados...</p>}
             {!loading && <Cards charactersToShow={charactersToShow} characters={characters} error={error} />}
 
-            <Pagination setPageNumber={setPageNumber} info={info} />
+            <Pagination pageNumber={pageNumber} setPageNumber={setPageNumber} info={info} />
         </>
     )
 }

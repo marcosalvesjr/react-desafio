@@ -1,7 +1,7 @@
 import styles from './FilterOptions.module.scss'
 const FilterOptions = ({ setPageNumber, setStatus, setSpecies, setGender, setSearch, setCharactersToShow }) => {
 
-    const handleClick = () => {
+    const handleClickClear = () => {
         setStatus('');
         setSpecies('');
         setGender('');
@@ -9,6 +9,7 @@ const FilterOptions = ({ setPageNumber, setStatus, setSpecies, setGender, setSea
         setCharactersToShow();
         setPageNumber(1);
     }
+
     return (
         <>
             <form className={`${styles.form} d-flex justify-content-center gap-4 mb-4`}>
@@ -51,7 +52,7 @@ const FilterOptions = ({ setPageNumber, setStatus, setSpecies, setGender, setSea
 
 
             </form>
-            <p className={`d-flex justify-content-center gap-4 mb-4 ${styles.btn}`} onClick={handleClick}>Limpar filtro</p>
+            <p className={`d-flex justify-content-center gap-4 mb-4 ${styles.btn}`} onClick={handleClickClear}>Limpar filtro</p>
 
 
         </>

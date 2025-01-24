@@ -1,22 +1,28 @@
+import { useState } from "react";
 import styles from "./Search.module.scss"
 
 const Search = ({ setPageNumber, setSearch, search }) => {
+  const [name, setName] = useState('');
 
 
   const handleChange = (e) => {
-    setSearch(e.target.value);
-    setPageNumber(1);
+    setName(e.target.value);
+
   }
 
-  const handleSubmit = (e) =>{
+  const handleSubmit = (e) => {
     e.preventDefault();
+    setSearch(name);
+    setPageNumber(1);
+    setName('');
   }
 
   return (
-    <form onSubmit={handleSubmit} className={`${styles.form} container d-flex justify-content-center pb-4`}>
+    <form onSubmit={handleSubmit} className={`${styles.form} container d-flex justify-content-center gap-4 pb-4`}>
       <label>
-        <input value={search} onChange={handleChange} placeholder="Digite o nome do personagem" type="text" className={styles.input} />
+        <input value={name} onChange={handleChange} placeholder="Digite o nome do personagem" type="text" className={styles.input} />
       </label>
+      <button className={`${styles.btn} btn  btn-primary fs-5`} type="submit">Buscar</button>
     </form>
   )
 }

@@ -1,9 +1,10 @@
 import ReactPaginate from 'react-paginate'
 import styles from './Pagination.module.scss'
 
-const Pagination = ({ info, setPageNumber }) => {
+const Pagination = ({ pageNumber, info, setPageNumber }) => {
   return (
-    <ReactPaginate className='pagination justify-content-center gap-2 my-2'
+    <ReactPaginate
+      className='pagination justify-content-center gap-2 my-2'
       pageCount={info.pages}
       nextClassName={`page-link ${styles.next}`}
       nextLabel="Próximo"
@@ -13,6 +14,7 @@ const Pagination = ({ info, setPageNumber }) => {
       pageLinkClassName='page-link'
       onPageChange={(data) => { setPageNumber(data.selected + 1) }}
       activeClassName='active'
+      forcePage={pageNumber === 1 ? 0 : pageNumber - 1}
     />
   )
 }
