@@ -7,6 +7,7 @@ import { useSearchParams } from 'react-router-dom';
 
 
 
+
 const Characters = () => {
 
 
@@ -72,9 +73,11 @@ const Characters = () => {
     return (
         <>
             <Search setPageNumber={setPageNumber} search={search} setSearch={setSearch} />
-            <FilterOptions setSearchParams={setSearchParams} setPageNumber={setPageNumber} setCharactersToShow={setCharactersToShow} setSearch={setSearch} setStatus={setStatus} setSpecies={setSpecies} setGender={setGender} />
-            {loading && <p className='text-primary text-center fw-bolder'>Carregando dados...</p>}
-            {!loading && <Cards charactersToShow={charactersToShow} characters={characters} error={error} />}
+            <div className='container d-flex flex-row'>
+                <FilterOptions setSearchParams={setSearchParams} setPageNumber={setPageNumber} setCharactersToShow={setCharactersToShow} setSearch={setSearch} setStatus={setStatus} setSpecies={setSpecies} setGender={setGender} />
+                {loading && <p className='text-primary text-center fw-bolder'>Carregando dados...</p>}
+                {!loading && <Cards charactersToShow={charactersToShow} characters={characters} error={error} />}
+            </div>
 
             <Pagination pageNumber={pageNumber} setPageNumber={setPageNumber} info={info} />
         </>
