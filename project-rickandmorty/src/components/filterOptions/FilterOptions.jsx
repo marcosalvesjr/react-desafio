@@ -13,8 +13,8 @@ const FilterOptions = ({ setPageNumber, setStatus, setSpecies, setGender, setSea
     return (
         <>
             <div>
-                <h1 className='text-center'>Filtros</h1>
-                <form className={`d-flex flex-column justify-content-center`}>
+                <h1 className='text-center'>Filt<span className='text-primary'>ros</span></h1>
+                <form className={`d-flex flex-column justify-content-center ${styles.form}`}>
                     <label>Status:</label>
                     <select className={`${styles.opt} mb-3`} onChange={(e) => { setStatus(e.target.value); setPageNumber(1); }}>
                         <option defaultValue="placeholder" disabled selected>Selecione o status</option>

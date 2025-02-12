@@ -13,13 +13,16 @@ const Characters = () => {
 
     const urlBase = "https://rickandmortyapi.com/api/character";
     const [searchParams, setSearchParams] = useSearchParams();
+    const getParam = (param, defaultValue = "") => searchParams.get(param) || defaultValue;
+    const getNumberParam = (param, defaultValue = 1) => Number(searchParams.get(param)) || defaultValue;
 
-    const [pageNumber, setPageNumber] = useState(Number(searchParams.get('page')) || 1);
-    const [status, setStatus] = useState(searchParams.get('status') || "");
-    const [species, setSpecies] = useState(searchParams.get('species') || "");
-    const [search, setSearch] = useState(searchParams.get('search') || "");
-    const [gender, setGender] = useState(searchParams.get('gender') || "");
-    const [charactersToShow, setCharactersToShow] = useState(Number(searchParams.get('characterstoshow')) || 20);
+
+    const [pageNumber, setPageNumber] = useState(getNumberParam('page') || 1);
+    const [status, setStatus] = useState(getParam('status') || "");
+    const [species, setSpecies] = useState(getParam('species') || "");
+    const [search, setSearch] = useState(getParam('search') || "");
+    const [gender, setGender] = useState(getParam('gender') || "");
+    const [charactersToShow, setCharactersToShow] = useState(getNumberParam('characterstoshow') || 20);
 
     const query = `?page=${pageNumber}&name=${search}&status=${status}&species=${species}&gender=${gender}`;
 
@@ -30,22 +33,22 @@ const Characters = () => {
 
 
     useEffect(() => {
-        setPageNumber(Number(searchParams.get('page')) || 1);
-        setStatus(searchParams.get('status') || '');
-        setSpecies(searchParams.get('species') || '');
-        setSearch(searchParams.get('name') || '');
-        setGender(searchParams.get('gender') || '');
-        setCharactersToShow(Number(searchParams.get('characterstoshow')) || 20);
+        setPageNumber(getNumberParam('page'));
+        setStatus(getParam('status'));
+        setSpecies(getParam('species'));
+        setSearch(getParam('name'));
+        setGender(getParam('gender'));
+        setCharactersToShow(getNumberParam('characterstoshow', 20));
     }, [searchParams]);
 
     useEffect(() => {
         setSearchParams({
-            page: `${pageNumber}`,
-            name: `${search}`,
-            status: `${status}`,
-            species: `${species}`,
-            gender: `${gender}`,
-            characterstoshow: `${charactersToShow}`
+            page: pageNumber,
+            name: search,
+            status: status,
+            species: species,
+            gender: gender,
+            characterstoshow: charactersToShow
         })
     }, [pageNumber, search, status, species, gender, charactersToShow])
 
@@ -54,7 +57,7 @@ const Characters = () => {
         const fetchCharacters = async () => {
             setLoading(true);
             try {
-                const res = await fetch(urlBase + query)
+                const res = await fetch(`${urlBase}?page=${pageNumber}&name=${search}&status=${status}&species=${species}&gender=${gender}`)
                 if (!res.ok) {
                     throw new Error(`Error: ${res.status} - ${res.statusText}`);
                 }

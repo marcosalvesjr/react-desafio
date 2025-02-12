@@ -24,6 +24,7 @@
   .modal {
     padding: 2rem; /* Ajusta o padding em telas menores */
     width: 90%; /* Modal ocupa quase toda a largura */
-    height: auto;
+    height: 60vh;
+    overflow-y: auto;
   }
 }

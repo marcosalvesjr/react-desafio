@@ -17,10 +17,22 @@
 
   @media (max-width: 768px) {
     // Para telas menores que 768px
-    flex-direction: column; // Empilha o conteúdo verticalmente.
+    flex-direction: row; // Empilha o conteúdo verticalmente.
     align-items: center; // Centraliza no eixo vertical.
     .input {
       width: 300px;
     }
+    
+  }
+
+  @media (max-width: 380px) {
+    // Para telas menores que 768px
+    flex-direction: row; // Empilha o conteúdo verticalmente.
+    align-items: center; // Centraliza no eixo vertical.
+    .input {
+      
+      width: 200px;
+    }
+    
   }
 }

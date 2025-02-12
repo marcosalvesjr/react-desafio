@@ -1,19 +1,19 @@
-.container{
-  position:fixed
+.container {
+  position: fixed;
 }
 
 .opt {
   padding: 10px;
-  border: 2px solid #0B5ED7;
+  border: 2px solid #0b5ed7;
   border-radius: 8px;
   font-size: 16px;
   box-shadow: 1px 3px 9px rgba(0, 0, 0, 0.479);
-  max-width: 250px;
+  max-width: 200px;
 }
 
 .btn {
   text-decoration: underline;
-  color: #0B5ED7;
+  color: #0b5ed7;
   cursor: pointer;
   font-weight: bolder;
 }
@@ -27,12 +27,10 @@
   flex-wrap: wrap; // Permite que os elementos se reordenem em várias linhas.
   justify-content: center; // Centraliza os itens horizontalmente.
 
-
-  @media (max-width: 768px) { // Para telas menores que 768px
-    flex-direction: column; // Os elementos serão empilhados verticalmente.
-    align-items: center; // Centraliza os itens no eixo vertical.
-    .opt{
-      width: 300px;
+  @media (max-width: 768px) {
+    // Para telas menores que 768px
+    .opt {
+      width: 120px;
     }
   }
 }
