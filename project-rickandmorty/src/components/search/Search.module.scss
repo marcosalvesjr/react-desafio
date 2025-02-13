@@ -9,6 +9,7 @@
 
 .btn {
   box-shadow: 1px 3px 9px rgba(0, 0, 0, 0.479);
+
 }
 .form {
   display: flex;
@@ -22,7 +23,6 @@
     .input {
       width: 300px;
     }
-    
   }
 
   @media (max-width: 380px) {
@@ -30,9 +30,7 @@
     flex-direction: row; // Empilha o conteúdo verticalmente.
     align-items: center; // Centraliza no eixo vertical.
     .input {
-      
       width: 200px;
     }
-    
   }
 }

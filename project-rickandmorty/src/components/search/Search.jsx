@@ -18,11 +18,11 @@ const Search = ({ setPageNumber, setSearch, search }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className={`${styles.form} border border-danger`}>
+    <form onSubmit={handleSubmit} className={`border border-danger p-3 d-flex justify-content-center align-items-center`}>
       <label>
         <input value={name} onChange={handleChange} placeholder="Digite o nome do personagem" type="text" className={`rounded-start-pill ${styles.input}`} />
       </label>
-      <button className={`${styles.btn} btn btn-primary rounded-end-pill fs-5`} type="submit">Buscar</button>
+      <button className={`btn btn-primary rounded-end-pill p-2 fs-5 ${styles.btn}`} type="submit">Buscar</button>
     </form>
   )
 }
