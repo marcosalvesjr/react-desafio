@@ -74,16 +74,21 @@ const Characters = () => {
         fetchCharacters();
     }, [pageNumber, search, status, species, gender])
     return (
-        <>
+        <div className='container mt-4'>
             <Search setPageNumber={setPageNumber} search={search} setSearch={setSearch} />
-            <div className='container d-flex flex-row'>
-                <FilterOptions setSearchParams={setSearchParams} setPageNumber={setPageNumber} setCharactersToShow={setCharactersToShow} setSearch={setSearch} setStatus={setStatus} setSpecies={setSpecies} setGender={setGender} />
-                {loading && <p className='text-primary text-center fw-bolder'>Carregando dados...</p>}
-                {!loading && <Cards charactersToShow={charactersToShow} characters={characters} error={error} />}
+            <div className='row mt-3'>
+                <div className='col-md-3'>
+                    <FilterOptions setSearchParams={setSearchParams} setPageNumber={setPageNumber} setCharactersToShow={setCharactersToShow} setSearch={setSearch} setStatus={setStatus} setSpecies={setSpecies} setGender={setGender} />
+                </div>
+                <div className='col-md-9'>
+
+                    {loading && <p className='text-primary text-center fw-bolder'>Carregando dados...</p>}
+                    {!loading && <Cards charactersToShow={charactersToShow} characters={characters} error={error} />}
+                </div>
             </div>
 
             <Pagination pageNumber={pageNumber} setPageNumber={setPageNumber} info={info} />
-        </>
+        </div>
     )
 }
 
