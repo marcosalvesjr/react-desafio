@@ -11,7 +11,7 @@ const Cards = ({ characters, error, charactersToShow }) => {
 
   if (characters && characters.length > 0) {
     return (
-      <div className={`container`}>
+      <div className={`container rounded-3 p-5 bg-light `}>
         <div className='row'>
           {characters.slice(0, charactersToShow).map((character) => (
             <div className='col-lg-4 col-md-6 position-relative mb-3' key={character.id}>
