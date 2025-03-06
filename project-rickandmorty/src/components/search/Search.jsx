@@ -4,7 +4,6 @@ import styles from "./Search.module.scss"
 const Search = ({ setPageNumber, setSearch, search }) => {
   const [name, setName] = useState('');
 
-
   const handleChange = (e) => {
     setName(e.target.value);
 

@@ -24,7 +24,7 @@ const Characters = () => {
     const [gender, setGender] = useState(getParam('gender') || "");
     const [charactersToShow, setCharactersToShow] = useState(getNumberParam('characterstoshow') || 20);
 
-    const query = `?page=${pageNumber}&name=${search}&status=${status}&species=${species}&gender=${gender}`;
+    //const query = `?page=${pageNumber}&name=${search}&status=${status}&species=${species}&gender=${gender}`;
 
     const [characters, setCharacters] = useState([]);
     const [info, setInfo] = useState([]);

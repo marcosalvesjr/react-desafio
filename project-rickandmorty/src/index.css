@@ -4,6 +4,8 @@ body {
   background-color: #838383;
 }
 
-#root{
+#root {
+
   background-color: #838383;
+  height: 100vh;
 }

@@ -12,8 +12,8 @@ const FilterOptions = ({ setPageNumber, setStatus, setSpecies, setGender, setSea
 
     return (
         <>
-            <div className='position-relative mr-5'>
-                <div className='rounded-3 p-4 bg-light position-fixed'>
+            <div>
+                <div className='rounded-3 p-4 bg-light '>
                     <h1 className='text-center'>Filt<span className='text-primary'>ros</span></h1>
                     <form className={`d-flex flex-column justify-content-center`}>
                         <label>Status:</label>
