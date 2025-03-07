@@ -20,9 +20,9 @@ const Cards = ({ characters, error, charactersToShow }) => {
                   <img className={`img-fluid w-100 h-100`} src={character.image} alt="Imagem dos personagens" />
                 </a>
                 <div className='content'>
-                  <div className='fs-4 fw-bold mb-4'>{character.name}</div>
+                  <div className='fs-4 fw-bold mb-2 text-center pt-2'>{character.name}</div>
                   <div className='fs-6'>Última localização</div>
-                  <div className='fs-5'>{character.location.name}</div>
+                  <div className='fs-5 pb-2'>{character.location.name}</div>
                 </div>
                 <button onClick={() => { setOpen(!open); setSelectedCharacter(character) }} className='w-100 btn btn-primary rounded-top-0 btn-lg'>Saiba mais</button>
 

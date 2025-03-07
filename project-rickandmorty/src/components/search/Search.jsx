@@ -18,7 +18,7 @@ const Search = ({ setPageNumber, setSearch, search }) => {
 
   return (
     <div className="position-relative">
-      <form onSubmit={handleSubmit} className={` rounded-5 p-4 bg-light p-3 d-flex justify-content-center align-items-center`}>
+      <form onSubmit={handleSubmit} className={` rounded p-4 bg-light p-3 d-flex justify-content-center align-items-center`}>
         <label>
           <input value={name} onChange={handleChange} placeholder="Digite o nome do personagem" type="text" className={`rounded-start-pill ${styles.input}`} />
         </label>
